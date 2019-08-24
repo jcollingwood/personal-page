@@ -11,16 +11,20 @@ function Test2() {
   return <div>Test2</div>
 }
 
+function Test3() {
+  return <div>Test3</div>
+}
+
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <Router>
           <Switch>
-            <Route path='/' render={() => <Test1 />} />
+            <Route exact path='/' render={() => <Test1 />} />
             <Route path='/test' render={() => <Test2 />} />
-            <Route path='/test2' render={() => <Test1 />} />
-            <Redirect from='*' to='/test2' />
+            <Route path='/test2' render={() => <Test3 />} />
+            <Redirect from='*' to='/' />
           </Switch>
         </Router>
       </div>
